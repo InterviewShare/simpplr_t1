@@ -16,7 +16,7 @@ services:
         - 3000:3000
     volumes:
       - ./app:/usr/src/app
-      - /app/node_modules 
+      - /usr/src/app/node_modules 
     links: 
       - api
     stdin_open: true
@@ -30,7 +30,7 @@ services:
         - 3001:3001
     volumes:
       - ./api:/usr/src/api
-      - /api/node_modules 
+      - /usr/src/api/node_modules 
     environment: 
       YELP_API_KEY: 'pSxxXBpunBnBT0mIoP_m6VTEy32nmGTOG8xO5_9ehd8uIPpSgZvaSTxqmVoNdR_OxuXI2u5JLB5gltsjBUxat5sy4ci96wvRmWJT_Bmw473B48rMEeZQml2lcPBeX3Yx'
       

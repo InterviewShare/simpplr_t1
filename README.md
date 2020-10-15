@@ -13,3 +13,4 @@ This project implements a quick start up project using the facebook's create-rea
 
 # Link to the video::
 
+https://www.loom.com/share/d924a219c8bd4b1f8e9d8ec99389f603?sharedAppSource=personal_library
