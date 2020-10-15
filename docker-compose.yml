@@ -1,0 +1,36 @@
+# Please refer https://docs.docker.com/compose to learn more about Docker Compose.
+
+# This is a sample docker-compose file with two services
+# 1. yourwebapp is an sample web service where the docker container image will be built from the Dockerfile as
+#    part of starting the compose.
+# 2. redis is an existing image hosted in docker hub.
+version: '3.4'
+
+services:
+  app:
+    image: app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+        - 3000:3000
+    volumes:
+      - ./app:/usr/src/app
+      - /app/node_modules 
+    links: 
+      - api
+    stdin_open: true
+
+  api:
+    image: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+        - 3001:3001
+    volumes:
+      - ./api:/usr/src/api
+      - /api/node_modules 
+    environment: 
+      YELP_API_KEY: 'pSxxXBpunBnBT0mIoP_m6VTEy32nmGTOG8xO5_9ehd8uIPpSgZvaSTxqmVoNdR_OxuXI2u5JLB5gltsjBUxat5sy4ci96wvRmWJT_Bmw473B48rMEeZQml2lcPBeX3Yx'
+      
